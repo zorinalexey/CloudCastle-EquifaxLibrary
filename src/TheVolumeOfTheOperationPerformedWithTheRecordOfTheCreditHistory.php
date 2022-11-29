@@ -21,13 +21,13 @@ class TheVolumeOfTheOperationPerformedWithTheRecordOfTheCreditHistory extends Ab
      * Значение по умолчанию
      * @var string
      */
-    private int $default = 1;
+    protected int $default = 1;
 
     /**
      * Коллекция возможных вариантов запроса по справочнику
      * @var array
      */
-    private array $data = [
+    protected array $data = [
         'изменение отдельных показателей кредитной истории' => 1,
         'исключение/аннулирование отдельных показателей кредитной истории' => 2,
         'исключение/аннулирование записи кредитной истории' => 3,

@@ -21,13 +21,13 @@ class TheCodeOfTheOperationPerformedWithTheRecordCreditHistory extends AbstractB
      * Значение по умолчанию
      * @var string
      */
-    private string $default = 'B';
+    protected string $default = 'B';
 
     /**
      * Коллекция возможных вариантов запроса по справочнику
      * @var array
      */
-    private array $data = [
+    protected array $data = [
         'Источник направляет кредитную историю о субъекте или его отдельном обязательстве впервые' => 'A',
         'Кредитная история изменяется или дополняется' => 'B',
         'Исправляется ошибка в кредитной информации или представляется непринятая бюро кредитная информация' => 'C',

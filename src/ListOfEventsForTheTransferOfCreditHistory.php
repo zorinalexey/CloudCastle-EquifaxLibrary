@@ -21,13 +21,13 @@ class ListOfEventsForTheTransferOfCreditHistory extends AbstractBook
      * Значение по умолчанию
      * @var string
      */
-    private string $default = '1.1';
+    protected string $default = '1.1';
 
     /**
      * Коллекция возможных вариантов запроса по справочнику
      * @var array
      */
-    private array $data = [
+    protected array $data = [
         'Субъект обратился к источнику с предложением совершить сделку' => '1.1',
         'Источник одобрил обращение субъекта (направил ему оферту) или изменились сведения об обращении' => '1.2',
         'Источник отказался от совершения сделки по обращению субъекта' => '1.3',

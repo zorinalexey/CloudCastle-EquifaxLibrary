@@ -33,9 +33,9 @@ abstract class AbstractBook
      */
     public function __construct($str = false)
     {
-        $this->set($str);
+        $this->set((string)$str);
         if ( ! $this->code OR ! $this->name AND isset($this->default)) {
-            $this->set($this->default);
+            $this->set((string)$this->default);
         }
     }
 
@@ -44,14 +44,17 @@ abstract class AbstractBook
      * @param string|int $str Запрашиваемый параметр
      * @return void
      */
-    private function set($str): void
+    protected function set(string $str): void
     {
-        foreach ($this->data as $key => $value) {
-            if (mb_strtolower($str) === mb_strtolower($key)
-                OR mb_strtolower($str) === mb_strtolower($value)
-            ) {
-                $this->name = mb_strtolower($str);
-                $this->code = $value;
+        $name = mb_strtolower($str);
+        if ($str) {
+            foreach ($this->data as $key => $value) {
+                if ($name === mb_strtolower((string)$key)
+                    OR $name === mb_strtolower((string)$value)
+                ) {
+                    $this->name = $name;
+                    $this->code = (string)$value;
+                }
             }
         }
     }
@@ -60,9 +63,9 @@ abstract class AbstractBook
      * Получить справочник
      * @return array
      */
-    public function getLirary(): array
+    public function getLibrary(): array
     {
-        return self::$data;
+        return $this->data;
     }
 
 }
